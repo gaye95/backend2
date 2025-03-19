@@ -1,10 +1,9 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://ooggaye:passer123@inserer.4vcsc.mongodb.net/?retryWrites=true&w=majority&appName=inserer"
-    ); // ✅ Suppression des options obsolètes
+    await mongoose.connect(process.env.MONGO_URI);
     console.log("✅ MongoDB connecté avec succès !");
   } catch (error) {
     console.error("❌ Erreur de connexion à MongoDB :", error);
