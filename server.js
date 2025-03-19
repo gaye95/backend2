@@ -16,5 +16,5 @@ connectDB();
 app.use('/api/etudiants', etudiantRoutes);
 
 // Lancer le serveur
-const PORT = 5000;
-app.listen(PORT, () => console.log(`Serveur démarré sur le port ${PORT}`));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, '0.0.0.0', () => console.log(`Serveur démarré sur le port ${PORT}`));
